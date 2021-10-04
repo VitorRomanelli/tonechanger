@@ -1,14 +1,9 @@
 <template>
   <div
-    class="d-flex justify-center align-center"
+    class="pa-4 d-flex justify-center align-center"
     style="background: #18191c; height: 100%"
   >
-    <v-card
-      class="pa-6"
-      color="#c5c5c5"
-      max-width="500"
-      style="box-shadow: 0px 10px 10px green"
-    >
+    <v-card class="pa-6" color="#c5c5c5" max-width="500">
       <v-card-title class="d-flex flex-column justify-center align-center">
         <h2>Jam</h2>
         Transcrever
@@ -16,8 +11,11 @@
 
       <v-textarea
         class="mb-3"
+        style="resize: vertical"
+        color="black"
         hide-details
         v-model="entry"
+        rows="4" cols="50" resize: auto egg
         outlined
         placeholder="Digite suas notas"
       ></v-textarea>
