@@ -26,9 +26,11 @@
       ></v-textarea>
 
 
-      <div v-if="entry != ''" class="result">
-        <span>{{ makeExit == "" ? "Não encontrado" : makeExit }}</span>
+      <div v-if="entry != ''" class="result mb-6">
+        <span>{{ makeExit == "" ? "Notas inválidas" : makeExit }}</span>
       </div>
+
+      <!-- <v-alert type="error" v-if="error" transition="scale-transition">lkçsdjf</v-alert> -->
     </v-card>
   </div>
 </template>
@@ -56,6 +58,8 @@ export default {
   data: () => ({
     entry: "",
     saida: "",
+
+    error: false,
 
     notes: [
       { note: "c", value: "Dó" },
@@ -97,7 +101,6 @@ export default {
     translate(note) {
       if (note == "do" || note == "c" || note == "si#" || note == "b#") {
         let index = this.notes.findIndex((x) => x.note == "c");
-
         let position = this.calculate(index);
         return this.notes[position].value;
       } else if (note == "do#" || note == "c#" || note == "db") {
@@ -145,9 +148,17 @@ export default {
         let position = this.calculate(index);
         return this.notes[position].value;
       }
+      //  else {
+      //   if (this.error && note != " ") {
+      //     this.$toast.error("Erro! Existe alguma nota inválida!");
+      //   }
+      //   this.error = true;
+      // }
     },
 
     calculate(index) {
+      // this.error = false;
+
       if (index + 4 > this.notes.length) {
         index -= this.notes.length - 1;
         index += 2;
