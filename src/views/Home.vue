@@ -3,7 +3,7 @@
     class="pa-4 d-flex justify-center align-center"
     style="background: #100C1C; height: 100%"
   >
-    <v-card class="pa-8" color="#fff" max-width="500" style="border-radius: 10px; box-shadow: 8px 8px 0px #21d7af;">
+    <v-card class="pa-8" color="#fff" max-width="345" style="border-radius: 10px; box-shadow: 8px 8px 0px #21d7af;">
       <v-card-title class="d-flex flex-column justify-center align-center mb-3">
         <h2>Jam</h2>
         <h3>
@@ -12,12 +12,11 @@
       </v-card-title>
 
       <v-textarea
-        class="mb-3"
+        class="mb-8"
         style="resize: vertical; border-radius: 8px;"
         color="white"
-        background-color="#aaa"
+        background-color="#eee"
         hide-details
-        dark
         v-model="entry"
         rows="2" 
         cols="30" 
@@ -41,9 +40,9 @@
   justify-content: center;
   align-items: center;
 
-  color: #fff;
+  color: #000;
 
-  background: #aaa;
+  background: #eee;
 
   padding: 10px;
   border-radius: 10px !important;
