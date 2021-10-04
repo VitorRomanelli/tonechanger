@@ -1,30 +1,31 @@
 <template>
   <div
     class="pa-4 d-flex justify-center align-center"
-    style="background: #18191c; height: 100%"
+    style="background: #100C1C; height: 100%"
   >
-    <v-card class="pa-6" color="#c5c5c5" max-width="500">
-      <v-card-title class="d-flex flex-column justify-center align-center">
+    <v-card class="pa-8" color="#fff" max-width="500" style="border-radius: 10px; box-shadow: 8px 8px 0px #21d7af;">
+      <v-card-title class="d-flex flex-column justify-center align-center mb-3">
         <h2>Jam</h2>
-        Transcrever
+        <h3>
+        Tone Changer
+        </h3>
       </v-card-title>
 
       <v-textarea
         class="mb-3"
-        style="resize: vertical"
-        color="black"
+        style="resize: vertical; border-radius: 8px;"
+        color="white"
+        background-color="#aaa"
         hide-details
+        dark
         v-model="entry"
-        rows="4" cols="50" resize: auto egg
+        rows="2" 
+        cols="30" 
+        resize: auto egg
         outlined
         placeholder="Digite suas notas"
       ></v-textarea>
 
-      <p>Resultado:</p>
-
-      <br />
-
-      <span v-if="entry != ''"> Saxofone </span>
 
       <div v-if="entry != ''" class="result">
         <span>{{ makeExit == "" ? "Não encontrado" : makeExit }}</span>
@@ -36,10 +37,13 @@
 <style scoped>
 .result {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 
-  background: #f5f5f5;
+  color: #fff;
+
+  background: #aaa;
 
   padding: 10px;
   border-radius: 10px !important;
@@ -124,7 +128,6 @@ export default {
       } else if (note == "sol" || note == "g") {
         let index = this.notes.findIndex((x) => x.note == "g");
         let position = this.calculate(index);
-        console.log(position);
         return this.notes[position].value;
       } else if (note == "sol#" || note == "g#" || note == "ab") {
         let index = this.notes.findIndex((x) => x.note == "g#");
